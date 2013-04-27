@@ -1,10 +1,31 @@
-# DassetsLessv1
+# Dassets::Lessv1
 
-Dassets engine for compiling LESS CSS using the 1.x.x Ruby compiler
+Dassets [engine](https://github.com/redding/dassets#compiling) for compiling [LESS CSS](http://lesscss.org/) using the [1.x.x ruby compiler](https://github.com/cloudhead/less/tree/v1.2.21).
 
 ## Usage
 
-TODO: Write code samples and usage instructions here
+Register the engine:
+
+```ruby
+# in config/assets.rb
+require 'dassets'
+require 'dassets-lessv1'
+
+Dassets.configure do |c|
+  c.root_path '/some/root/path'
+
+  # register the Lessv1 engine to your source extension
+  c.engine 'less', Dassets::Lessv1
+end
+```
+
+Put your `.less` source files in your source path and digest them.  Lessv1 will compile their content using the 1.x.x LESS ruby compiler, switch their extension to `.css`, and write the output to the output path.
+
+## Why LESS 1.x.x?
+
+Less v1 worked great back in the day and still works great today.  This is for those who need to use the older version or don't want the latest js-based implementation (and its dependencies) and don't mind running the older version.
+
+Want to use LESS v2?  Write an engine for it and it'll get mentioned it here.
 
 ## Installation
 
