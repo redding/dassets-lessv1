@@ -25,19 +25,8 @@ class Dassets::Lessv1::Engine
     end
 
     should "compile any input content as LESS css" do
-      raw_css_content = read_root_file('css.css')
-      exp_css_content = read_root_file('css_compiled.css')
-      assert_equal exp_css_content, subject.compile(raw_css_content)
-
-      raw_less_content = read_root_file('normal.less')
-      exp_css_content  = read_root_file('normal_compiled.css')
-      assert_equal exp_css_content, subject.compile(raw_less_content)
-    end
-
-    private
-
-    def read_root_file(rel_path)
-      File.read(Dassets.config.root_path.join(rel_path))
+      assert_equal @factory.css_compiled,  subject.compile(@factory.css)
+      assert_equal @factory.less_compiled, subject.compile(@factory.less)
     end
 
   end

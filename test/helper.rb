@@ -11,3 +11,8 @@ ENV['DASSETS_TEST_MODE']   = 'yes'
 ENV['DASSETS_ASSETS_FILE'] = 'test/support/config/assets'
 require 'dassets'
 Dassets.init
+
+require 'test/support/factory'
+class Assert::Context
+  setup{ @factory = Dassets::Lessv1::Factory }
+end
