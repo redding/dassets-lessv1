@@ -15,7 +15,7 @@ Dassets.configure do |c|
   c.root_path '/some/root/path'
 
   # register the Lessv1 engine to your source extension
-  c.engine 'less', Dassets::Lessv1
+  c.engine 'less', Dassets::Lessv1::Engine
 end
 ```
 

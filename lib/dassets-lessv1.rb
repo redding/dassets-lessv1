@@ -1,5 +1,10 @@
+require 'dassets/engine'
 require "dassets-lessv1/version"
 
 module Dassets::Lessv1
-  # TODO: your code goes here...
+
+  class Engine < Dassets::Engine
+
+  end
+
 end
