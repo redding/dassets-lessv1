@@ -1,6 +1,6 @@
 # DassetsLessv1
 
-TODO: Write a gem description
+Dassets engine for compiling LESS CSS using the 1.x.x Ruby compiler
 
 ## Usage
 

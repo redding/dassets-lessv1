@@ -5,12 +5,12 @@ require "dassets-lessv1/version"
 
 Gem::Specification.new do |gem|
   gem.name        = "dassets-lessv1"
-  gem.version     = DassetsLessv1::VERSION
-  gem.authors     = ["TODO: authors"]
-  gem.email       = ["TODO: emails"]
-  gem.description = %q{TODO: Write a gem description}
-  gem.summary     = %q{TODO: Write a gem summary}
-  gem.homepage    = "http://github.com/__/dassets-lessv1"
+  gem.version     = Dassets::Lessv1::VERSION
+  gem.authors     = ["Kelly Redding", "Collin Redding"]
+  gem.email       = ["kelly@kellyredding.com", "collin.redding@me.com"]
+  gem.description = %q{Dassets engine for compiling LESS CSS using the 1.x.x Ruby compiler}
+  gem.summary     = %q{Dassets engine for compiling LESS CSS v1}
+  gem.homepage    = "http://github.com/redding/dassets-lessv1"
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
