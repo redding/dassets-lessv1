@@ -11,10 +11,19 @@ class Dassets::Lessv1::Engine
     end
     subject{ @engine }
 
+    should have_instance_method :compiler
+
     should "be a Dassets engine" do
       assert_kind_of Dassets::Engine, subject
       assert_respond_to 'ext', subject
       assert_respond_to 'compile', subject
+    end
+
+    should "use a Less compiler with the path set to the source path" do
+      c = subject.compiler('')
+      assert_kind_of ::Less::Engine, c
+      assert_respond_to :to_css, c
+      assert_equal subject.opts['source_path'], c.path
     end
 
     should "transform any input extension to `css`" do

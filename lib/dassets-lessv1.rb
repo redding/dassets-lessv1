@@ -11,19 +11,24 @@ module Dassets::Lessv1
     end
 
     def compile(input_content)
-      Source.new(input_content).to_css
+      compiler(input_content).to_css
+    end
+
+    def compiler(content)
+      Compiler.new(content, self.opts)
     end
 
   end
 
   # This is a little wrapper class to the less engine.  I use this to access
   # and set the `@path` instance variable on the engine.  This sets the root
-  # path all imports are done from.  This just makes importing partials easier.
+  # path all imports are done from to the path of the source the engine was
+  # registered on.  This allows you to import partials relative to the source.
 
-  class Source < ::Less::Engine
+  class Compiler < ::Less::Engine
     attr_reader :path
-    def initialize(content, opts={})
-      @path = Dassets.config.source_path
+    def initialize(content, opts)
+      @path = opts['source_path']
       super
     end
   end
