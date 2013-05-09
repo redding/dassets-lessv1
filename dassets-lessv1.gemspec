@@ -22,6 +22,6 @@ Gem::Specification.new do |gem|
   # lock in to the 1.x.x LESS ruby compiler b/c this is Lessv1
   # ie https://github.com/cloudhead/less/tree/v1.2.21
   gem.add_dependency("less", ["~> 1.1"])
-  gem.add_dependency("dassets")
+  gem.add_dependency("dassets", ["~> 0.6"])
 
 end
