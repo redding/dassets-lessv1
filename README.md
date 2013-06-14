@@ -12,14 +12,18 @@ require 'dassets'
 require 'dassets-lessv1'
 
 Dassets.configure do |c|
-  c.root_path '/some/root/path'
 
-  # register the Lessv1 engine to your source extension
-  c.engine 'less', Dassets::Lessv1::Engine
+  c.source "/path/to/assets") do |s|
+
+    # register the Lessv1 engine to your source extension
+    c.engine 'less', Dassets::Lessv1::Engine
+
+  end
+
 end
 ```
 
-Put your `.less` source files in your source path and digest them.  Lessv1 will compile their content using the 1.x.x LESS ruby compiler, switch their extension to `.css`, and write the output to the output path.
+Put your `.less` source files in your source path.  Dassets will compile their content using the 1.x.x LESS ruby compiler, switch their extension to `.css`, and write the output to the output path.
 
 ## Why LESS 1.x.x?
 
