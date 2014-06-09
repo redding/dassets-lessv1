@@ -11,13 +11,14 @@ Gem::Specification.new do |gem|
   gem.description = %q{Dassets engine for compiling LESS CSS using the 1.x.x Ruby compiler}
   gem.summary     = %q{Dassets engine for compiling LESS CSS v1}
   gem.homepage    = "http://github.com/redding/dassets-lessv1"
+  gem.license     = 'MIT'
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.require_paths = ["lib"]
 
-  gem.add_development_dependency("assert")
+  gem.add_development_dependency("assert", ["~> 2.10"])
 
   # lock in to the 1.x.x LESS ruby compiler b/c this is Lessv1
   # ie https://github.com/cloudhead/less/tree/v1.2.21
