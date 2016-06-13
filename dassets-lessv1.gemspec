@@ -8,8 +8,8 @@ Gem::Specification.new do |gem|
   gem.version     = Dassets::Lessv1::VERSION
   gem.authors     = ["Kelly Redding", "Collin Redding"]
   gem.email       = ["kelly@kellyredding.com", "collin.redding@me.com"]
-  gem.description = %q{Dassets engine for compiling LESS CSS using the 1.x.x Ruby compiler}
   gem.summary     = %q{Dassets engine for compiling LESS CSS v1}
+  gem.description = %q{Dassets engine for compiling LESS CSS v1}
   gem.homepage    = "http://github.com/redding/dassets-lessv1"
   gem.license     = 'MIT'
 
@@ -18,11 +18,11 @@ Gem::Specification.new do |gem|
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.require_paths = ["lib"]
 
-  gem.add_development_dependency("assert", ["~> 2.10"])
+  gem.add_development_dependency("assert", ["~> 2.16.1"])
 
   # lock in to the 1.x.x LESS ruby compiler b/c this is Lessv1
   # ie https://github.com/cloudhead/less/tree/v1.2.21
-  gem.add_dependency("less", ["~> 1.1"])
-  gem.add_dependency("dassets", ["~> 0.6"])
+  gem.add_dependency("less",    ["~> 1.1"])
+  gem.add_dependency("dassets", ["~> 0.14.0"])
 
 end
