@@ -1,3 +1,5 @@
+=== **This has been archived and is not maintained.** ===
+
 # Dassets::Lessv1
 
 Dassets [engine](https://github.com/redding/dassets#compiling) for compiling [LESS CSS](http://lesscss.org/) using the [1.x.x ruby compiler](https://github.com/cloudhead/less/tree/v1.2.21).
